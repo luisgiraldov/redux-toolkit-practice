@@ -15,12 +15,12 @@ const postsSlice = createSlice({
             state.loading = true
         },
         getPostsSuccess: (state, {payload}) => {
-            state.posts = payload,
-            state.loading = false,
+            state.posts = payload
+            state.loading = false
             state.hasErrors = false
         },
         getPostsFailure: (state) => {
-            state.loading = false,
+            state.loading = false
             state.hasErrors = true
         }
     }
@@ -41,8 +41,8 @@ export const fetchPosts = () => {
         dispatch(getPosts());
 
         try {
-            const resonse = await fetch('https://jsonplaceholder.typicode.com/posts');
-            const data = await Response.json();
+            const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+            const data = await response.json();
 
             dispatch(getPostsSuccess(data));
         } catch (error) {
