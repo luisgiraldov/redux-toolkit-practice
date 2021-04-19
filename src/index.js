@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 
 //Local imports
 import App from './App';
-import rootReducer from './slices';
+import rootReducer from './slices/rootReducer';
 
 //Assets
 import './index.css';
